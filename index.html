@@ -1,1 +1,296 @@
-Test
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Parneet Sidhu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="styles.css">-->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body{
+    background-color: #dadada;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav{
+    padding:20px;
+}
+
+.name_logo{
+    display:flex;
+    align-items:center;
+}
+
+.name_logo .blue_dot {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(28, 141, 198);
+    border-radius: 50%;
+}
+
+.name_logo .name{
+    margin-left:15px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.name_logo .degree{
+    margin-left:20px;
+    color:rgb(115, 115, 115)
+}
+
+.link-wi-border{
+    text-decoration:none;
+    color:#000;
+}
+
+.about-image .profile-img{
+    border-radius:50%;
+    width:400px;
+    height:400px;
+    object-fit:cover;
+}
+
+.about-body{
+    margin-top:100px;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.about-body .about_text{
+    max-width:600px;
+    margin-left:20px;
+}
+
+.about-body .about_text p{
+    color:#414141;
+}
+
+.container.about-body {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.container.about-body.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-image img {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.about-image img.loaded {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+.skills-container{
+    margin-top:100px;
+}
+
+.skills-title{
+    border-bottom:1px solid #8e8e8e;
+    padding:10px;
+}
+
+.skill-row{
+    margin-top:20px;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.skill{
+    margin:10px;
+}
+
+.skill img{
+    height:50px;
+}
+
+.skill_subtitle{
+    margin-top:30px;
+}
+
+footer{
+    display:flex;
+    justify-content: center;
+    padding:20px;
+    background-color: #e0e0e0;
+}
+
+/* For mobile devices */
+@media screen and (max-width:800px) {
+    .name_logo .blue_dot {
+        display:none;
+    }
+
+    .name_logo{
+        flex-direction: column;
+        align-items:center;
+    
+    }
+
+    .name_logo .name{
+        margin:none;
+    }
+
+
+    .name_logo .degree{
+        margin:none;
+    }
+
+    .about-image .profile-img{
+        width:300px;
+        height:300px;
+    }
+    
+}
+
+@media screen and (max-width: 1030px) {
+    .about-body{
+        flex-direction: column;
+    }
+
+    .about_text{
+        margin-top:30px;
+    }
+
+    .skill-row{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+    </style>
+</head>
+  <body>
+    <nav>
+        <div class="name_logo">
+            <span class="blue_dot"></span>
+            <span class="name">
+                <a href="" class="link-wi-border">Parneet Sidhu</a>
+            </span>
+            <span class="degree">
+                Bachelor's  of Computer Engineering
+            </span>
+        </div>
+    </nav>
+    <div class="about-body">
+        <div class="about-image">
+            <img src="profileold.jpg" alt="profile-img" class="profile-img">
+        </div>
+        
+        <div class="about_text">
+            <h1>Parneet Sidhu</h1>
+            <h4>A bit about me</h4>
+            <p>
+                I am currently pursuing a Bachelor's degree in Computer Engineering at California State University, Sacramento (CSUS). This educational journey has been a captivating exploration of the intricate world of computer systems, software development, and hardware design. Embracing a curriculum that combines computer science and electrical engineering.
+                <br><br>
+                As a computer science enthusiast, I'm passionate about <b>Python programming</b> and <b>Machine learning</b>. Proficient in crafting efficient code, my focus lies in transforming data into meaningful insights through machine learning. Constantly learning and adapting to evolving tech, I believe in the power of technology to enhance our lives. 
+            </p>
+        </div>
+    </div>
+
+    <div class="container skills-container">
+        <h3 class="skills-title">
+          <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-tools skills-tool-icon" viewBox="0 0 16 16">
+            <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3q0-.405-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708M3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z"/>
+          </svg>
+          Skills
+        </h3>
+        <div class="skill_subtitle">
+            <h4>Programming Languages</h4>
+        </div>
+        <div class="skill-row">
+            <div class="skill">
+                <img src="https://cdn.freebiesupply.com/logos/large/2x/python-5-logo-png-transparent.png" alt="python">
+                <span class="skill-name">Python</span>
+            </div>
+            <div class="skill">
+                <img src="https://cdn.icon-icons.com/icons2/2415/PNG/512/java_original_wordmark_logo_icon_146459.png" alt="java">
+                <span class="skill-name">Java</span>
+            </div>
+            
+
+            <div class="skill">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1822px-ISO_C%2B%2B_Logo.svg.png" alt="cpp">
+                <span class="skill-name">C++</span>
+            </div>
+        </div>
+
+
+        <div class="skill_subtitle">
+            <h4>Machine Learning</h4>
+        </div>
+        <div class="skill-row">
+            <div class="skill">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Tensorflow_logo.svg/1200px-Tensorflow_logo.svg.png" alt="tensorflow">
+                <span class="skill-name">TensorFlow</span>
+            </div>
+            <div class="skill">
+                <img src="https://numfocus.org/wp-content/uploads/2016/07/pandas-logo-300.png" alt="pandas">
+                <span class="skill-name">Pandas</span>
+            </div>
+            <div class="skill">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Created_with_Matplotlib-logo.svg/2048px-Created_with_Matplotlib-logo.svg.png" alt="matplotlib">
+                <span class="skill-name">Matplotlib</span>
+            </div>
+
+            <div class="skill">
+                <img src="https://user-images.githubusercontent.com/67586773/105040771-43887300-5a88-11eb-9f01-bee100b9ef22.png" alt="NumPy">
+                <span class="skill-name">NumPy</span>
+            </div>
+        </div>
+
+        <div class="skill_subtitle">
+            <h4>Web Development</h4>
+        </div>
+        <div class="skill-row">
+            <div class="skill">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/512px-HTML5_logo_and_wordmark.svg.png" alt="html">
+                <span class="skill-name">HTML</span>
+            </div>
+            <div class="skill">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png" alt="css">
+                <span class="skill-name">CSS</span>
+            </div>
+            <div class="skill">
+                <img src="https://static.wikia.nocookie.net/coding-help/images/6/69/JavaScript.png/revision/latest?cb=20230517123229" alt="javascript">
+                <span class="skill-name">JavaScript</span>
+            </div>
+            <div class="skill">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEid0QPsjXkWu1NbHvWugsNZVU6X1c9KmzgZwdYyQD8WRQFMBVBl6QIcHQDzEkwmTVnLhSyiRguPk2IPokk192iT_NDQE2i_2rwRgbp2tYdlhVTYNu6tWD432Ud1QX5AHawRvQMfv5hBKdoBeSlhZF4y8pzCL_FxTyj41OArDOaYyY59Xunv3DTb8SUv/s522/ReactJS.png" alt="reactjs">
+                <span class="skill-name">ReactJS</span>
+            </div>
+        </div>
+
+    </div><br><br>
+    <footer>
+        <div>
+            Copyright
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-c-circle" viewBox="0 0 16 16">
+            <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512"/>
+          </svg>
+          | All rights reserved
+        </div>  
+    </footer>
+    <script>
+        window.addEventListener('load', function() {
+            document.querySelector('.container.about-body').classList.add('animate');
+        });
+
+
+        window.addEventListener('load', function() {
+        document.querySelector('.about-image img').classList.add('loaded');
+    });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body{
+    background-color: #dadada;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav{
+    padding:20px;
+}
+
+.name_logo{
+    display:flex;
+    align-items:center;
+}
+
+.name_logo .blue_dot {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(28, 141, 198);
+    border-radius: 50%;
+}
+
+.name_logo .name{
+    margin-left:15px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.name_logo .degree{
+    margin-left:20px;
+    color:rgb(115, 115, 115)
+}
+
+.link-wi-border{
+    text-decoration:none;
+    color:#000;
+}
+
+.about-image .profile-img{
+    border-radius:50%;
+    width:400px;
+    height:400px;
+    object-fit:cover;
+}
+
+.about-body{
+    margin-top:100px;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.about-body .about_text{
+    max-width:600px;
+    margin-left:20px;
+}
+
+.about-body .about_text p{
+    color:#414141;
+}
+
+.container.about-body {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.container.about-body.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-image img {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.about-image img.loaded {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+.skills-container{
+    margin-top:100px;
+}
+
+.skills-title{
+    border-bottom:1px solid #8e8e8e;
+    padding:10px;
+}
+
+.skill-row{
+    margin-top:20px;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.skill{
+    margin:10px;
+}
+
+.skill img{
+    height:50px;
+}
+
+.skill_subtitle{
+    margin-top:30px;
+}
+
+footer{
+    display:flex;
+    justify-content: center;
+    padding:20px;
+    background-color: #e0e0e0;
+}
+
+/* For mobile devices */
+@media screen and (max-width:800px) {
+    .name_logo .blue_dot {
+        display:none;
+    }
+
+    .name_logo{
+        flex-direction: column;
+        align-items:center;
+    
+    }
+
+    .name_logo .name{
+        margin:none;
+    }
+
+
+    .name_logo .degree{
+        margin:none;
+    }
+
+    .about-image .profile-img{
+        width:300px;
+        height:300px;
+    }
+    
+}
+
+@media screen and (max-width: 1030px) {
+    .about-body{
+        flex-direction: column;
+    }
+
+    .about_text{
+        margin-top:30px;
+    }
+
+    .skill-row{
+        grid-template-columns: 1fr 1fr;
+    }
+}
