@@ -3,6 +3,7 @@ fetchRepositoriesWithInfo('parneetsingh022')
         console.log(response);
         const projects = document.getElementById('projects');
         for(let item of response){
+            if(!item.display) continue;
             let technologies = '';
             if(item.technologies){
             for(let tech of item.technologies){
@@ -29,7 +30,9 @@ fetchRepositoriesWithInfo('parneetsingh022')
             <div class="project_links">
                 <span><a href="${item.repoLink}">Source Code</a></span>
                 ${item.demo ? '<span><a href="${item.demo}">Live Demo</a></span>' : ''}
+                ${item.model ? `<span><a href="${item.model}">Model</a></span>` : ''}
             </div>
+            
             </div>
             `
         }
@@ -48,6 +51,7 @@ async function fetchRepositoriesWithInfo(username) {
             const jsonData = await fetchProjectJson(username, repo.name);
             if (jsonData) {
                 repositoriesList.push({
+                    display: jsonData.config.display || true,
                     name: repo.name,
                     displayName: jsonData.config.display_name || null,
                     technologies: jsonData.config.technologies || null,
@@ -55,6 +59,7 @@ async function fetchRepositoriesWithInfo(username) {
                     priority: jsonData.config.priority || null,
                     tag: jsonData.config.tag || null,
                     demo: jsonData.config.demo || null,
+                    model: jsonData.config.model || null,
                     repoLink: repo.html_url // Add repo link to the object
                 });
             }
