@@ -12,6 +12,11 @@ fetchRepositoriesWithInfo('parneetsingh022')
             }
             projects.innerHTML += `
             <div class="project-card">
+            <div class="desktop-card-view">
+                <a href="#" class="material-symbols-outlined">
+                    read_more
+                </a>
+            </div>
             <div class="card-body">
                 <div class="card-header">
                 <h5 class="card-title">${item.displayName}</h5>
@@ -29,9 +34,10 @@ fetchRepositoriesWithInfo('parneetsingh022')
 
             <div class="project_links">
                 <span><a href="${item.repoLink}">Source Code</a></span>
-                ${item.demo ? '<span><a href="${item.demo}">Live Demo</a></span>' : ''}
+                ${item.demo ? `<span><a href="${item.demo}">Live Demo</a></span>` : ''}
                 ${item.model ? `<span><a href="${item.model}">Model</a></span>` : ''}
             </div>
+            <div class="mobile-card-view"><a href="#">View</a></div>
             
             </div>
             `

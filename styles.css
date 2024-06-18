@@ -18,7 +18,7 @@ nav{
     display: inline-block;
     width: 30px;
     height: 30px;
-    background-color: #1c8dc6;
+    background-color: #ff7e5f;
     border-radius: 50%;
 }
 
@@ -158,20 +158,28 @@ footer{
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border: solid 4px transparent; /* Make border transparent */
-    background-clip: padding-box, border-box; /* Clip background */
+    border: solid 4px transparent;
+    background-clip: padding-box, border-box;
     background-origin: border-box;
-    background-image: linear-gradient(#fff, #fff), linear-gradient(to right, #ff7e5f, #feb47b); /* Double layer background */
+    background-image: linear-gradient(#fff, #fff), linear-gradient(to right, #ff7e5f, #feb47b);
     transition: all 0.3s ease;
-    margin-top:20px;
+    margin-top: 20px;
+    margin-left: auto; /* Center the card */
+    margin-right: auto; /* Center the card */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    width: 100%; /* Make width responsive */
+    max-width: 95%; /* Prevent the card from taking full width on smaller screens */
 }
 
-.project-card:hover {
-    transform: scale(1.05); /* Slightly scale up the card */
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2); /* Add a larger shadow */
-    border-color: #ff7e5f; /* Change border color on hover */
-    background-image: linear-gradient(#fff, #fff), linear-gradient(to right, #ff7e5f, #feb47b); /* Ensure gradient border is visible */
-    
+
+@media (min-width: 800px) {
+    .project-card:hover {
+        transform: scale(1.05); /* Slightly scale up the card */
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2); /* Add a larger shadow */
+        border-color: #ff7e5f; /* Change border color on hover */
+        background-image: linear-gradient(#fff, #fff), linear-gradient(to right, #ff7e5f, #feb47b); /* Ensure gradient border is visible */
+        
+    }
 }
 
 .project-card .card-text{
@@ -202,23 +210,78 @@ footer{
     position:absolute;
     margin-bottom:10px;
 }
-
 .project-card .project_links a{
     margin-right:10px;
     padding:5px;
     text-decoration:none;
     color:rgb(28, 141, 198);
+    padding-bottom:2px;
+    position: relative;
 }
 
-.project-card .project_links a:hover{
-    text-decoration:underline;
+.project-card .project_links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: rgb(28, 141, 198);
+    transition: width 0.3s ease;
+}
 
+.project-card .project_links a:hover::after {
+    width: 100%;
 }
 
 .project-card .card-header{
     display:flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.tag {
+    display: inline-block;
+    background-image: url("https://i.pinimg.com/originals/f9/6d/fb/f96dfb9f9d4e0b42af3888de8b9473a7.gif");
+    background-size: cover;
+    background-position: 0 -200px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    background-position: 0 -50px;
+  }
+  
+  .not-available{
+      color:#ff0000 !important;
+      font-style: italic;
+  }
+
+.mobile-card-view{
+    display:none;
+}
+
+.desktop-card-view{
+    position:absolute;
+    right:-20px;
+    top:-20px;
+    background-color:#ff7e5f;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+}
+
+.desktop-card-view a{
+    text-decoration:none;
+    color:#fff;
+}
+
+.desktop-card-view:hover{
+    background-color:#fa6f4c;
 }
 
 /* For mobile devices */
@@ -242,14 +305,72 @@ footer{
         margin:none;
     }
 
-    .about-image .profile-img{
-        width:300px;
-        height:300px;
+    .project-card{
+        max-width:90%;
+    }
+
+    .project-card .card-header{
+        flex-direction: column;
+    }
+
+    .project-card .technologies{
+        display:none;
+    } 
+
+    .project-card .project_links {
+        display: none;
+    }
+
+    .project-card:hover {
+        transform: scale(1); /* Slightly scale up the card */
+        box-shadow: none; /* Add a larger shadow */
+        background-image: linear-gradient(#fff, #fff), linear-gradient(to right, #ff7e5f, #feb47b); /* Ensure gradient border is visible */   
+    }
+
+    .project-card .card-text{
+        display:flex;
+        justify-content: center;
+        margin-bottom:30px;
+    }
+
+    .card-text.not-available{
+        display:none;
+    }
+
+    .mobile-card-view {
+        position: absolute; /* Use absolute positioning */
+        bottom: 0; /* Align to the bottom of the parent container */
+        left: 50%; /* Center horizontally relative to the parent */
+        transform: translateX(-50%); /* Adjust for exact centering */
+        display: flex;
+        justify-content: center;
+        background-color: rgb(68, 95, 234);
+        width:100%;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+    }
+
+    .mobile-card-view:hover{
+        background-color:#3250e8;
+    }
+
+    .mobile-card-view a{
+        text-decoration:none;
+        color: #fff;
+        padding:5px;
+        
+    }
+
+    .desktop-card-view{
+        display:none;
     }
     
 }
 
 @media screen and (max-width: 1030px) {
+    .projects{
+        grid-template-columns: 1fr;
+    }
     .about-body{
         flex-direction: column;
     }
@@ -263,20 +384,3 @@ footer{
     }
 }
 
-
-
-.tag {
-  display: inline-block;
-  background-image: url("https://i.pinimg.com/originals/f9/6d/fb/f96dfb9f9d4e0b42af3888de8b9473a7.gif");
-  background-size: cover;
-  background-position: 0 -200px;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bold;
-  background-position: 0 -50px;
-}
-
-.not-available{
-    color:#ff0000 !important;
-    font-style: italic;
-}
