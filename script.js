@@ -14,7 +14,7 @@ fetchRepositoriesWithInfo('parneetsingh022')
             <div class="project-card">
             <div class="desktop-card-view">
                 <a href="#" class="material-symbols-outlined">
-                    expand_content
+                    open_in_new
                 </a>
             </div>
             <div class="card-body">
@@ -22,8 +22,6 @@ fetchRepositoriesWithInfo('parneetsingh022')
                 <h5 class="card-title">${item.displayName}</h5>
                 ${item.tag ? `<span class="tag">${item.tag}</span>` : ''}
                 </div>
-                
-
                 <p class="card-text">${item.description}</p>
                 ${!item.demo ? '<p class="card-text not-available">Live demo not available for this project.</p>' : ''}
                 <div class="technologies">
