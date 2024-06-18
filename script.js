@@ -14,7 +14,7 @@ fetchRepositoriesWithInfo('parneetsingh022')
             <div class="project-card">
             <div class="desktop-card-view">
                 <a href="#" class="material-symbols-outlined">
-                    read_more
+                    expand_content
                 </a>
             </div>
             <div class="card-body">
