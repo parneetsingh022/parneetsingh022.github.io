@@ -43,6 +43,7 @@ nav{
     width:400px;
     height:400px;
     object-fit:cover;
+    object-position:top;
 }
 
 .about-body{
