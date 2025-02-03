@@ -29,7 +29,7 @@ fetchRepositoriesWithInfo('parneetsingh022')
 
             <div class="project_links">
                 <span><a href="${item.repoLink}">Source Code</a></span>
-                ${item.demo ? '<span><a href="${item.demo}">Live Demo</a></span>' : ''}
+                ${item.demo ? `<span><a href="${item.demo}">Live Demo</a></span>` : ''}
                 ${item.model ? `<span><a href="${item.model}">Model</a></span>` : ''}
             </div>
             
